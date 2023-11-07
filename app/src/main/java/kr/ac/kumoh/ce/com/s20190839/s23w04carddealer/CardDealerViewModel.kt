@@ -3,6 +3,7 @@ package kr.ac.kumoh.ce.com.s20190839.s23w04carddealer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kr.ac.kumoh.ce.com.s20190839.s23w04carddealer.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class CardDealerViewModel : ViewModel() {
@@ -22,5 +23,7 @@ class CardDealerViewModel : ViewModel() {
         }
         newCards.sort()
         _cards.value = newCards // 가장 중요함
+
+
     }
 }

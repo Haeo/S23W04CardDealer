@@ -5,11 +5,17 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kr.ac.kumoh.ce.com.s20190839.s23w04carddealer.databinding.ActivityMainBinding
+import java.util.Arrays.sort
+import java.util.EnumSet.range
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private lateinit var main: ActivityMainBinding
     private lateinit var model: CardDealerViewModel
+
+    val shapes = Array(5){ -1 }
+    val numbers = Array(5){ -1 }
+    var i = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +33,17 @@ class MainActivity : AppCompatActivity() {
                 "drawable",
                 packageName
             )}
-            main.card1.setImageResource(res[0])
+            main.card1!!.setImageResource(res[0])
+            main.card2!!.setImageResource(res[1])
+            main.card3!!.setImageResource(res[2])
+            main.card4!!.setImageResource(res[3])
+            main.card5!!.setImageResource(res[4])
         })
 
         main.btnShuffle.setOnClickListener{
             model.shuffle()
         }
+
     }
 
     private fun getCardName(c: Int): String {
@@ -64,11 +75,17 @@ class MainActivity : AppCompatActivity() {
             }
             else -> "error"
         }
-//        return if (number in arrayOf("jack", "queen", "king"))
-//            "c_${number}_of_${shape}2"
-//        else
-//            "c_${number}_of_${shape}"
-        return "c_${number}_of_${shape}"
 
+        return "c_${number}_of_${shape}"
     }
+
+    private fun getPoker() {
+        sort(shapes)
+        sort(numbers)
+        val numbersSet = setOf(numbers)
+        if(shapes[0] == shapes[1] && shapes[1] == shapes[2] && shapes[2] == shapes[3] && shapes[3] == shapes[4] && shapes[4] == shapes[5]) {
+
+        }
+    }
+
 }

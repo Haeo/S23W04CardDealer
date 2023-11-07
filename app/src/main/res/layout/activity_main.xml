@@ -12,10 +12,56 @@
         android:layout_width="100dp"
         android:layout_height="0dp"
         android:src="@drawable/c_3_of_hearts"
-        app:layout_constraintBottom_toTopOf="@id/btn_shuffle"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card3"
+        app:layout_constraintEnd_toStartOf="@id/card2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/card2"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_3_of_hearts"
+        app:layout_constraintBottom_toBottomOf="@id/card1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card1"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/card3"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_3_of_hearts"
+        app:layout_constraintBottom_toTopOf="@id/txt_result"
+        app:layout_constraintEnd_toStartOf="@id/card4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card1" />
+    <ImageView
+        android:id="@+id/card4"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_3_of_hearts"
+        app:layout_constraintBottom_toTopOf="@id/txt_result"
+        app:layout_constraintEnd_toStartOf="@id/card5"
+        app:layout_constraintStart_toEndOf="@id/card3"
+        app:layout_constraintTop_toTopOf="@id/card3" />
+    <ImageView
+        android:id="@+id/card5"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:src="@drawable/c_3_of_hearts"
+        app:layout_constraintBottom_toTopOf="@id/txt_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/card4"
+        app:layout_constraintTop_toTopOf="@id/card3" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="족보"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        app:layout_constraintTop_toBottomOf="@id/card3"
+        app:layout_constraintBottom_toTopOf="@id/btn_shuffle" />
 
     <Button
         android:id="@+id/btn_shuffle"
@@ -23,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Good Luck"
-        app:layout_constraintTop_toBottomOf="@+id/card1"
+        app:layout_constraintTop_toBottomOf="@id/txt_result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
