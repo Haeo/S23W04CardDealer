@@ -4,10 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kr.ac.kumoh.ce.com.s20190839.s23w04carddealer.databinding.ActivityMainBinding
+import org.w3c.dom.Text
 import kotlin.random.Random
 
 class CardDealerViewModel : ViewModel() {
     private var _cards = MutableLiveData<IntArray>(IntArray(5) { -1 })
+
     val cards: LiveData<IntArray>
         get() = _cards
 
